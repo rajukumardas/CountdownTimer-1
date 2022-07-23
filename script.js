@@ -19,7 +19,7 @@ const COLOR_CODES = {
 };
 
 
-const TIME_LIMIT = 90;
+var TIME_LIMIT = 0;
 let timePassed = 0;
 let timeLeft = TIME_LIMIT;
 let timerInterval = null;
@@ -49,15 +49,19 @@ document.getElementById("app").innerHTML = `
 </div>
 `;
 
-startTimer();
+//startTimer();
 
 function onTimesUp() {
   clearInterval(timerInterval);
 }
 
 function startTimer() {
+  let minutes=document.getElementById("min").value
+  let seconds=document.getElementById("sec").value
+  console.log(timePassed);
+  TIME_LIMIT=parseInt(minutes)*60+parseInt(seconds)
   timerInterval = setInterval(() => {
-    timePassed = timePassed += 1;
+    timePassed = timePassed + 1;
     timeLeft = TIME_LIMIT - timePassed;
     document.getElementById("base-timer-label").innerHTML = formatTime(
       timeLeft
@@ -65,10 +69,27 @@ function startTimer() {
     setCircleDasharray();
     setRemainingPathColor(timeLeft);
 
-    if (timeLeft === 0) {
+    if (timeLeft <= 0) {
       onTimesUp();
     }
   }, 1000);
+}
+
+function stopTime(){
+  clearInterval(timerInterval)
+  timeLeft=0
+  TIME_LIMIT=0
+  timePassed=0
+}
+function timeReset(){
+  clearInterval(timerInterval)
+  timeLeft=0
+  TIME_LIMIT=0
+  timePassed=0
+  console.log("hey");
+  document.getElementById("base-timer-label").innerHTML = formatTime(
+    timeLeft
+  );
 }
 
 function formatTime(time) {
