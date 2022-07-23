@@ -75,6 +75,7 @@ body {
     width: 100px;
     height: 50px;
     font-size: 30px;
+    border-radius: 12px;
   
   }
   .btn1:hover {
@@ -87,6 +88,8 @@ body {
     width: 100px;
     height: 50px;
     font-size: 30px;
+    border-radius: 12px;
+    
   }
   .btn2:hover {
     background-color: red;
@@ -98,6 +101,7 @@ body {
     width: 100px;
     height: 50px;
     font-size: 30px;
+    border-radius: 12px;
     
   }
   .btn3:hover {
@@ -106,15 +110,31 @@ body {
   }
 
   #min{
-    width: 100px;
+    width: 50px;
     height: 30px;
     border-radius: 10px;
     font-size: 30px;
+    left: 640px;
+    position: absolute;
+    top: 500px;
+  
     
   }
   #sec{
-    width: 100px;
+    width: 50px;
     height: 30px;
     border-radius: 10px;
     font-size: 30px;
+    left: 730px;
+    position: absolute;
+    top: 500px;
+  }
+.minsec{
+  font-size: 25px;
+}
+  .colon{
+    position: absolute;
+    left: 710px;
+    top: 468px;
+    font-size: 25px;
   }

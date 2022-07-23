@@ -54,6 +54,9 @@ document.getElementById("app").innerHTML = `
 function onTimesUp() {
   clearInterval(timerInterval);
 }
+/* if(onclick(startTimer())===true) {
+document.getElementsByClassName("btn1").disabled = true;
+} */
 
 function startTimer() {
   let minutes=document.getElementById("min").value
