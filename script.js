@@ -86,7 +86,6 @@ function timeReset(){
   timeLeft=0
   TIME_LIMIT=0
   timePassed=0
-  console.log("hey");
   document.getElementById("base-timer-label").innerHTML = formatTime(
     timeLeft
   );
