@@ -1,5 +1,3 @@
-// Credit: Mateusz Rybczonec
-
 const FULL_DASH_ARRAY = 283;
 const WARNING_THRESHOLD = 10;
 const ALERT_THRESHOLD = 5;
@@ -55,7 +53,7 @@ function onTimesUp() {
   clearInterval(timerInterval);
 }
 /* if(onclick(startTimer())===true) {
-document.getElementsByClassName("btn1").disabled = true;
+document.getElementsById("btn1").disabled = true;
 } */
 
 function startTimer() {
@@ -78,6 +76,27 @@ function startTimer() {
   }, 1000);
 }
 
+document.getElementById("btn1").onclick = function() {
+  //disable
+  onclick=startTimer()
+  this.onclick = null;
+ 
+ 
+  //do some validation stuff
+}
+ /*  if((stopTime() || timeReset())===true){
+    document.getElementById("btn1").onclick = startTimer()  
+      //disable
+      
+     // this.disable = false;
+  }
+   */
+
+
+  /* if(stopTime() || timeReset()).onclick===true{
+
+  } */
+
 function stopTime(){
   clearInterval(timerInterval)
   timeLeft=0
@@ -93,6 +112,7 @@ function timeReset(){
     timeLeft
   );
 }
+
 
 function formatTime(time) {
   const minutes = Math.floor(time / 60);
